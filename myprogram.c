@@ -96,6 +96,13 @@ int main(int argc, char *argv[]) {
     }
 
     // delete OpenGL context
+    glDeleteProgram(shaderProgram);
+    glDeleteShader(fragmentShader);
+    glDeleteShader(vertexShader);
+
+    glDeleteBuffers(1, &vbo);
+    glDeleteVertexArrays(1, &vao);
+
     SDL_GL_DeleteContext(context);
     SDL_Quit();
     return 0;
